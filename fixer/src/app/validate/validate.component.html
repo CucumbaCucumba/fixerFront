@@ -1,0 +1,62 @@
+<div style="padding-top: 10%;" class=" col-md-12">
+    <div  class="card mx-auto card-container col-md-4 ">
+      <legend>Validation</legend>
+      <form
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit(f)"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <input
+            hidden
+            type="text"
+            class="form-control"
+            name="role"
+            value="CLIENT"
+            [(ngModel)]="form.role"
+            required
+          />
+            <label for="city">City</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            [(ngModel)]="form.city"
+            required
+          />
+          <label for="tel">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="tel"
+            [(ngModel)]="form.tel"
+            required
+          />
+          <input
+          hidden
+          type="text"
+          class="form-control"
+          name="imagePath"
+          [(ngModel)]="form.imagePath"
+        />
+        </div>
+        <label class="form-label" for="customFile">Default file input example</label>
+        <input
+        (change)="onUploadFiles($event)"
+        type="file"
+        class="form-control"
+        id="photo"
+        placeholder="Enter Image"
+        required
+      />   
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">
+            Validate
+          </button>
+        </div>
+        <div class="form-group">
+        </div>
+      </form>
+    </div>
+  </div>
